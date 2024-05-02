@@ -47,6 +47,10 @@
               "projects/core"
             ],
             "port": 6006,
+            "styles": [
+              "projects/theme/index.scss",
+              "projects/core/src/lib/theme/index.scss"
+            ],
             "open": false
           }
         },

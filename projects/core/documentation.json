@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -94,11 +104,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/button/button.stories.ts",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n  },\n  args: {\n    onClick: fn()\n  },\n}"
+                "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n    role: { control: 'radio', options: ['primary', 'secondary'] },\n    size: { control: 'radio', options: ['small', 'medium', 'large'] },\n    variant: { control: 'radio', options: ['filled', 'outlined'] },\n  },\n  args: {\n    label: 'Button',\n    role: 'primary',\n    size: 'medium',\n    variant: 'filled',\n    onClick: fn()\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
             },
             {
                 "name": "preview",
@@ -121,14 +131,14 @@
                 "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
             },
             {
-                "name": "Primary",
+                "name": "Roles",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/button/button.stories.ts",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Example',\n    onClick: () => console.log('Clicked')\n  },\n}"
+                "type": "",
+                "defaultValue": "() => BUTTON_ROLES"
             },
             {
                 "name": "Secondary",
@@ -141,6 +151,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
             },
             {
+                "name": "Sizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => BUTTON_SIZES"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -149,6 +169,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "Variant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => BUTTON_VARIANTS"
             }
         ],
         "functions": [],
@@ -191,7 +221,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/core/src/lib/button/button.stories.ts",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -200,6 +230,58 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/core/src/lib/components/button/button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n    role: { control: 'radio', options: ['primary', 'secondary'] },\n    size: { control: 'radio', options: ['small', 'medium', 'large'] },\n    variant: { control: 'radio', options: ['filled', 'outlined'] },\n  },\n  args: {\n    label: 'Button',\n    role: 'primary',\n    size: 'medium',\n    variant: 'filled',\n    onClick: fn()\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                },
+                {
+                    "name": "Roles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => BUTTON_ROLES"
+                },
+                {
+                    "name": "Sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => BUTTON_SIZES"
+                },
+                {
+                    "name": "Variant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => BUTTON_VARIANTS"
+                }
+            ],
             "projects/core/src/stories/button.stories.ts": [
                 {
                     "name": "Large",
@@ -316,28 +398,6 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "projects/core/src/lib/button/button.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n  },\n  args: {\n    onClick: fn()\n  },\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Example',\n    onClick: () => console.log('Clicked')\n  },\n}"
-                }
-            ],
             "projects/core/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -393,13 +453,13 @@
                     "kind": 183
                 }
             ],
-            "projects/core/src/lib/button/button.stories.ts": [
+            "projects/core/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/core/src/lib/button/button.stories.ts",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -424,7 +484,17 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/core/src/lib/button/button.stories.ts",
+                "filePath": "projects/core/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -434,11 +504,31 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/core/src/lib/button/button.stories.ts",
+                "filePath": "projects/core/src/lib/components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Roles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Sizes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Variant",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,0 +1,76 @@
+$roles: primary, secondary;
+$sizes: small, medium, large;
+$variants: filled, outlined;
+
+:host {
+  font-family: 'Inter UI', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+
+  @each $variant in $variants {
+    &[variant=#{$variant}] {
+      @if $variant == filled {
+        @each $role in $roles {
+          &[role=#{$role}] {
+            border: 1px solid var(--ak-color-#{$role}-500);
+            background-color: var(--ak-color-#{$role}-500);
+            color: var(--ak-color-#{$role}-500-contrast);
+
+            &:hover {
+              border: 1px solid var(--ak-color-#{$role}-450);
+              background-color: var(--ak-color-#{$role}-450);
+              color: var(--ak-color-#{$role}-450-contrast);
+            }
+
+            &:active {
+              border: 1px solid var(--ak-color-#{$role}-550);
+              background-color: var(--ak-color-#{$role}-550);
+              color: var(--ak-color-#{$role}-550-contrast);
+            }
+          }
+        }
+      }
+      @else if $variant == outlined {
+        @each $role in $roles {
+          &[role=#{$role}] {
+            border: 1px solid var(--ak-color-#{$role}-500);
+            background-color: var(--ak-color-#{$role}-500-contrast);
+            color: var(--ak-color-#{$role}-500);
+
+            &:hover {
+              background-color: var(--ak-color-#{$role}-50);
+              color: var(--ak-color-#{$role}-50-contrast);
+            }
+
+            &:active {
+              background-color: var(--ak-color-#{$role}-100);
+              color: var(--ak-color-#{$role}-100-contrast);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @each $size in $sizes {
+    &[size=#{$size}] {
+      @if $size == small {
+        max-height: 24px;
+        min-height: 24px;
+        padding: 0 16px;
+      }
+      @if $size == medium {
+        max-height: 32px;
+        min-height: 32px;
+        padding: 0 16px;
+      }
+      @else if $size == large {
+        max-height: 40px;
+        min-height: 40px;
+        padding: 0 16px;
+      }
+    }
+  }
+
+}
