@@ -7,6 +7,7 @@ $variants: filled, outlined;
   border-radius: 4px;
   cursor: pointer;
   display: block;
+  position: relative;
 
   @each $variant in $variants {
     &[variant=#{$variant}] {
@@ -71,6 +72,18 @@ $variants: filled, outlined;
         padding: 0 16px;
       }
     }
+  }
+
+  &.is-loading span {
+    visibility: hidden;
+  }
+
+  .loading-component {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: calc(50% - 7px);
+    left: calc(50% - 7px);
   }
 
 }

@@ -1,1 +1,4 @@
-{{ label }}
+<ng-container *ngIf="isLoading">
+  <div class="loading-component">X</div>
+</ng-container>
+<span>{{ label }}</span>
