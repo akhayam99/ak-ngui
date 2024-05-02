@@ -18,6 +18,7 @@ export const LoadTheme = (params: AkTheme) => {
   const style = document.createElement('style')
 
   style.appendChild(document.createTextNode(`:root {
+    font-family: 'Inter UI', sans-serif;
     ${getStyledColors({ ...DEFAULT_COLORS, ...params?.colors || {} })}
     ${getStyledSizes({ ...DEFAULT_SIZES, ...params?.sizes || {} })}
   }`))

@@ -1,4 +1,4 @@
-<ng-container *ngIf="isLoading">
-  <div class="loading-component">X</div>
-</ng-container>
+<div class="spinner-container" *ngIf="loading">
+  <ak-spinner [role]="role" [variant]="variant" />
+</div>
 <span>{{ label }}</span>

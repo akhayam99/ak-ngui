@@ -108,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n    role: { control: 'radio', options: ['primary', 'secondary'] },\n    size: { control: 'radio', options: ['small', 'medium', 'large'] },\n    variant: { control: 'radio', options: ['filled', 'outlined'] },\n  },\n  args: {\n    label: 'Button',\n    role: 'primary',\n    size: 'medium',\n    variant: 'filled',\n    onClick: fn()\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n    role: { control: 'radio', options: ['primary', 'secondary'] },\n    size: { control: 'radio', options: ['small', 'medium', 'large'] },\n    variant: { control: 'radio', options: ['filled', 'outlined'] },\n    isLoading: { control: 'boolean' }\n  },\n  args: {\n    label: 'BUTTON',\n    role: 'primary',\n    size: 'medium',\n    variant: 'filled',\n    isLoading: false,\n    onClick: fn()\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
             },
             {
                 "name": "preview",
@@ -249,7 +249,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n    role: { control: 'radio', options: ['primary', 'secondary'] },\n    size: { control: 'radio', options: ['small', 'medium', 'large'] },\n    variant: { control: 'radio', options: ['filled', 'outlined'] },\n  },\n  args: {\n    label: 'Button',\n    role: 'primary',\n    size: 'medium',\n    variant: 'filled',\n    onClick: fn()\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                    "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    onClick: { action: 'clicked' },\n    role: { control: 'radio', options: ['primary', 'secondary'] },\n    size: { control: 'radio', options: ['small', 'medium', 'large'] },\n    variant: { control: 'radio', options: ['filled', 'outlined'] },\n    isLoading: { control: 'boolean' }\n  },\n  args: {\n    label: 'BUTTON',\n    role: 'primary',\n    size: 'medium',\n    variant: 'filled',\n    isLoading: false,\n    onClick: fn()\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
                 },
                 {
                     "name": "Roles",

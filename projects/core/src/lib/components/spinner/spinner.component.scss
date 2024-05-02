@@ -1,0 +1,54 @@
+$roles: primary, secondary;
+$variants: filled, outlined;
+
+:host {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+  }
+
+  @each $variant in $variants {
+      &[variant=#{$variant}] {
+        @if $variant == filled {
+          @each $role in $roles {
+            &[role=#{$role}] {
+              .inner {
+                border: 2px solid var(--ak-color-#{$role}-500-contrast);
+                border-bottom-color: transparent;
+              }
+            }
+          }
+        }
+        @else if $variant == outlined {
+          @each $role in $roles {
+            &[role=#{$role}] {
+              .inner {
+                border: 2px solid var(--ak-color-#{$role}-500);
+                border-bottom-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

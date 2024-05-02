@@ -16,14 +16,16 @@ const meta: Meta<ButtonComponent> = {
     role: { control: 'radio', options: ['primary', 'secondary'] },
     size: { control: 'radio', options: ['small', 'medium', 'large'] },
     variant: { control: 'radio', options: ['filled', 'outlined'] },
-    isLoading: { control: 'boolean' }
+    loading: { control: 'boolean' },
+    disabled: { control: 'boolean' }
   },
   args: {
     label: 'BUTTON',
     role: 'primary',
     size: 'medium',
     variant: 'filled',
-    isLoading: false,
+    loading: false,
+    disabled: false,
     onClick: fn()
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],

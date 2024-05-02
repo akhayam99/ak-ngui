@@ -3,11 +3,14 @@ $sizes: small, medium, large;
 $variants: filled, outlined;
 
 :host {
-  font-family: 'Inter UI', sans-serif;
-  border-radius: 4px;
+  border-radius: var(--ak-size-xxxs);;
   cursor: pointer;
-  display: block;
   position: relative;
+
+  &:focus-visible {
+    outline: 2px solid var(--ak-color-primary-500);
+    outline-offset: 2px;
+  }
 
   @each $variant in $variants {
     &[variant=#{$variant}] {
@@ -18,13 +21,13 @@ $variants: filled, outlined;
             background-color: var(--ak-color-#{$role}-500);
             color: var(--ak-color-#{$role}-500-contrast);
 
-            &:hover {
+            &:hover:not(.is-disabled) {
               border: 1px solid var(--ak-color-#{$role}-450);
               background-color: var(--ak-color-#{$role}-450);
               color: var(--ak-color-#{$role}-450-contrast);
             }
 
-            &:active {
+            &:active:not(.is-disabled) {
               border: 1px solid var(--ak-color-#{$role}-550);
               background-color: var(--ak-color-#{$role}-550);
               color: var(--ak-color-#{$role}-550-contrast);
@@ -39,12 +42,12 @@ $variants: filled, outlined;
             background-color: var(--ak-color-#{$role}-500-contrast);
             color: var(--ak-color-#{$role}-500);
 
-            &:hover {
+            &:hover:not(.is-disabled) {
               background-color: var(--ak-color-#{$role}-50);
               color: var(--ak-color-#{$role}-50-contrast);
             }
 
-            &:active {
+            &:active:not(.is-disabled) {
               background-color: var(--ak-color-#{$role}-100);
               color: var(--ak-color-#{$role}-100-contrast);
             }
@@ -57,19 +60,19 @@ $variants: filled, outlined;
   @each $size in $sizes {
     &[size=#{$size}] {
       @if $size == small {
-        max-height: 24px;
-        min-height: 24px;
-        padding: 0 16px;
+        max-height: 1.875rem;
+        min-height: 1.875rem;
+        padding: 0 var(--ak-size-sm);
       }
       @if $size == medium {
-        max-height: 32px;
-        min-height: 32px;
-        padding: 0 16px;
+        max-height: 2.25rem;
+        min-height: 2.25rem;
+        padding: 0 var(--ak-size-sm);
       }
       @else if $size == large {
-        max-height: 40px;
-        min-height: 40px;
-        padding: 0 16px;
+        max-height: 2.25rem;
+        min-height: 2.25rem;
+        padding: 0 var(--ak-size-sm);
       }
     }
   }
@@ -78,12 +81,15 @@ $variants: filled, outlined;
     visibility: hidden;
   }
 
-  .loading-component {
-    width: 14px;
-    height: 14px;
+  .spinner-container {
     position: absolute;
-    top: calc(50% - 7px);
-    left: calc(50% - 7px);
+    width: 100%;
+    margin-left: calc(var(--ak-size-sm) * -1);
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 
 }
