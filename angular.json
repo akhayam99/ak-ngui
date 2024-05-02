@@ -46,7 +46,8 @@
               "-d",
               "projects/core"
             ],
-            "port": 6006
+            "port": 6006,
+            "open": false
           }
         },
         "build-storybook": {
@@ -61,7 +62,7 @@
               "-d",
               "projects/core"
             ],
-            "outputDir": "dist/storybook/core"
+            "outputDir": "storybook-static"
           }
         }
       }
