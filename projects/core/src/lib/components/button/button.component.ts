@@ -84,19 +84,27 @@ export class ButtonComponent implements OnChanges {
   }
 
   updateBg(): string {
-    return this.variant === 'outlined'
-      ? this.isActive ? this.getShade(1) : this.isHover ? this.getShade(0) : 'white'
-      : this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
+    if (this.variant === 'filled')
+      return this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
+
+    if (this.variant === 'ghost')
+      return this.isActive ? this.getShade(1) : this.isHover ? this.getShade(0) : 'transparent'
+
+    return this.isActive ? this.getShade(1) : this.isHover ? this.getShade(0) : 'white'
   }
 
   updateColor(): string {
-    return this.variant === 'outlined'
-      ? this.isActive ? this.getContrast(this.getShade(1)) : this.isHover ? this.getContrast(this.getShade(0)) : this.getShade(5)
-      : this.isActive ? this.getContrast(this.getShade(3)) : this.isHover ? this.getContrast(this.getShade(4)) : this.getContrast(this.getShade(5))
+    if (this.variant === 'filled')
+      return this.isActive ? this.getContrast(this.getShade(3)) : this.isHover ? this.getContrast(this.getShade(4)) : this.getContrast(this.getShade(5))
+
+    return this.isActive ? this.getContrast(this.getShade(1)) : this.isHover ? this.getContrast(this.getShade(0)) : this.getShade(5)
   }
 
   updateBorder(): string {
-    return this.variant === 'outlined' ? this.getShade(5) : 'white'
+    if (this.variant === 'filled')
+      return this.getShade(5)
+
+    return this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
   }
 
   getShade(index: number): string {

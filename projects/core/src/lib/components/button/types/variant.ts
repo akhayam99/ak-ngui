@@ -1,1 +1,1 @@
-export type ButtonVariant = 'filled' | 'outlined'
+export type ButtonVariant = 'filled' | 'outlined' | 'ghost'

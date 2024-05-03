@@ -45,6 +45,9 @@ export const AkCreateTheme = (params: AkTheme) => {
   style.appendChild(document.createTextNode(`:root {${generatedRoles}}`))
   style.appendChild(document.createTextNode(`:root {${generatedSizes}}`))
   style.appendChild(document.createTextNode(`:root {${generatedStatus}}`))
+  style.appendChild(document.createTextNode(`body * {
+    font-family: 'Inter UI', sans-serif;
+  }`))
   document.head.appendChild(style)
 
   themeLoaded = true

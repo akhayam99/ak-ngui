@@ -7,7 +7,7 @@ export const BUTTON_SIZES = ({
       ${roles.map(role => `
         <div style="display: flex; gap: 16px; align-items: center">
           ${sizes.map(size => `
-            <button [ak-button] [label]="'${size.toUpperCase()}'" [size]="'${size}'" [color]="'${role}'"></button>
+            <button [ak-button] [label]="'${size.toUpperCase()}'" [size]="'${size}'" [role]="'${role}'"></button>
           `).join('')}
         </div>
       `).join('')}

@@ -2,8 +2,10 @@ import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/
 import { fn } from '@storybook/test';
 import { StorybookThemeDecorator } from '../../utils';
 import { ButtonComponent } from './button.component';
+import { BUTTON_COLORS } from './stories/colors';
 import { BUTTON_ROLES } from './stories/roles';
 import { BUTTON_SIZES } from './stories/sizes';
+import { BUTTON_STATUS } from './stories/status';
 import { BUTTON_VARIANTS } from './stories/variants';
 
 const meta: Meta<ButtonComponent> = {
@@ -41,7 +43,7 @@ const meta: Meta<ButtonComponent> = {
     },
     variant: {
       control: 'radio',
-      options: ['filled', 'outlined'],
+      options: ['filled', 'outlined', 'ghost'],
       description: 'The variant of the button'
     },
     loading: {
@@ -74,7 +76,11 @@ type Story = StoryObj<ButtonComponent>;
 
 export const Default: Story = {};
 
+export const Colors = () => BUTTON_COLORS
+
 export const Roles = () => BUTTON_ROLES
+
+export const Status = () => BUTTON_STATUS
 
 export const Sizes = () => BUTTON_SIZES
 
