@@ -41,6 +41,16 @@
                 "defaultValue": "{}"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -139,6 +149,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<SpinnerComponent>",
                 "defaultValue": "{\n  title: 'Core/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'cblue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ToggleComponent>",
+                "defaultValue": "{\n  title: 'Core/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the toggle'\n    },\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the toggle'\n    },\n  },\n  args: {\n    color: 'cblue',\n    size: 'md',\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "preview",
@@ -277,6 +297,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
@@ -373,6 +404,28 @@
                     "deprecationMessage": "",
                     "type": "Meta<SpinnerComponent>",
                     "defaultValue": "{\n  title: 'Core/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'cblue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                }
+            ],
+            "projects/core/src/lib/components/toggle/toggle.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ToggleComponent>",
+                    "defaultValue": "{\n  title: 'Core/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the toggle'\n    },\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the toggle'\n    },\n  },\n  args: {\n    color: 'cblue',\n    size: 'md',\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/stories/button.stories.ts": [
@@ -571,6 +624,19 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "projects/core/src/lib/components/toggle/toggle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -671,6 +737,26 @@
             },
             {
                 "filePath": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/toggle/toggle.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

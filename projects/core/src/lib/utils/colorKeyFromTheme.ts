@@ -1,7 +1,10 @@
 import { akTheme } from "../theme";
 
-export function colorKeyFromTheme(key: string): string {
+export function colorKeyFromTheme(key?: string): string {
   const { colorKeys, roleKeys, statusKeys } = akTheme;
+
+  if (!key)
+    return "cneutral";
 
   if (statusKeys?.includes(key))
     return akTheme?.status[key];

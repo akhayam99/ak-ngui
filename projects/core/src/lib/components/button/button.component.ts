@@ -1,8 +1,7 @@
 import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { ColorContrastPipe } from '../../pipes/color-contrast.pipe';
-import { colorContrast, colorKeyFromTheme } from "../../utils";
-import { colorShade } from '../../utils/colorShade';
+import { colorContrast, colorFromKey, colorKeyFromTheme } from "../../utils";
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { ButtonSize } from './types/size';
 import { ButtonVariant } from './types/variant';
@@ -80,28 +79,28 @@ export class ButtonComponent implements OnChanges {
     if (this.variant === 'filled')
       switch (true) {
         case this.isActive:
-          return colorShade(this.colorKey, 3)
+          return colorFromKey(this.colorKey, 3)
         case this.isHover:
-          return colorShade(this.colorKey, 4)
+          return colorFromKey(this.colorKey, 4)
         default:
-          return colorShade(this.colorKey, 5)
+          return colorFromKey(this.colorKey)
       }
 
     if (this.variant === 'ghost')
       switch (true) {
         case this.isActive:
-          return colorShade(this.colorKey, 1)
+          return colorFromKey(this.colorKey, 1)
         case this.isHover:
-          return colorShade(this.colorKey, 0)
+          return colorFromKey(this.colorKey, 0)
         default:
           return 'transparent'
       }
 
     switch (true) {
       case this.isActive:
-        return colorShade(this.colorKey, 1)
+        return colorFromKey(this.colorKey, 1)
       case this.isHover:
-        return colorShade(this.colorKey, 0)
+        return colorFromKey(this.colorKey, 0)
       default:
         return "#FFFFFF"
     }
@@ -111,34 +110,34 @@ export class ButtonComponent implements OnChanges {
     if (this.variant === 'filled')
       switch (true) {
         case this.isActive:
-          return colorContrast(colorShade(this.colorKey, 3))
+          return colorContrast(colorFromKey(this.colorKey, 3))
         case this.isHover:
-          return colorContrast(colorShade(this.colorKey, 4))
+          return colorContrast(colorFromKey(this.colorKey, 4))
         default:
-          return colorContrast(colorShade(this.colorKey, 5))
+          return colorContrast(colorFromKey(this.colorKey))
       }
 
     switch (true) {
       case this.isActive:
-        return colorContrast(colorShade(this.colorKey, 1))
+        return colorContrast(colorFromKey(this.colorKey, 1))
       case this.isHover:
-        return colorContrast(colorShade(this.colorKey, 0))
+        return colorContrast(colorFromKey(this.colorKey, 0))
       default:
-        return colorShade(this.colorKey, 5)
+        return colorFromKey(this.colorKey)
     }
   }
 
   updateBorder(): string {
     if (this.variant !== 'filled')
-      return colorShade(this.colorKey, 5)
+      return colorFromKey(this.colorKey)
 
     switch (true) {
       case this.isActive:
-        return colorShade(this.colorKey, 3)
+        return colorFromKey(this.colorKey, 3)
       case this.isHover:
-        return colorShade(this.colorKey, 4)
+        return colorFromKey(this.colorKey, 4)
       default:
-        return colorShade(this.colorKey, 5)
+        return colorFromKey(this.colorKey)
     }
   }
 }

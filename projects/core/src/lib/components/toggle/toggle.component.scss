@@ -1,0 +1,91 @@
+:host {
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  transition: .3s;
+
+  .inner {
+    border-radius: 50%;
+    position: absolute;
+    transition: .3s;
+    z-index: 1;
+  }
+  &.sm {
+    height: var(--ak-size-sm);
+    width: calc(var(--ak-size-sm) * 1.75);
+
+    .inner {
+      height: calc(var(--ak-size-sm) - var(--ak-size-xxxs));
+      left: calc(var(--ak-size-xxxs) / 2);
+      top: calc(50% - (var(--ak-size-sm) - var(--ak-size-xxxs)) / 2);
+      width: calc(var(--ak-size-sm) - var(--ak-size-xxxs));
+    }
+
+    &.is-checked {
+      .inner {
+        left: calc(100% - calc(var(--ak-size-sm) - var(--ak-size-xxxs)) - calc(var(--ak-size-xxxs) / 2))
+      }
+    }
+  }
+
+  &.md {
+    height: var(--ak-size-md);
+    width: calc(var(--ak-size-md) * 1.75);
+
+    .inner, .valid, .invalid {
+      height: calc(var(--ak-size-md) - var(--ak-size-xxxs));
+      width: calc(var(--ak-size-md) - var(--ak-size-xxxs));
+    }
+
+    .inner {
+      left: calc(var(--ak-size-xxxs) / 2);
+      top: calc(50% - (var(--ak-size-md) - var(--ak-size-xxxs)) / 2);
+    }
+
+    .valid {
+      color: red;
+      left: calc(50% - var(--ak-size-xxxs));
+    }
+
+    &.is-checked {
+      .inner {
+        left: calc(100% - calc(var(--ak-size-md) - var(--ak-size-xxxs)) - calc(var(--ak-size-xxxs) / 2))
+      }
+    }
+  }
+
+
+  &.lg {
+    height: var(--ak-size-lg);
+    width: calc(var(--ak-size-lg) * 1.75);
+
+    .inner, .valid, .invalid {
+      height: calc(var(--ak-size-lg) - var(--ak-size-xxxs));
+      width: calc(var(--ak-size-lg) - var(--ak-size-xxxs));
+    }
+
+    .inner {
+      left: calc(var(--ak-size-xxxs) / 2);
+      top: calc(50% - (var(--ak-size-lg) - var(--ak-size-xxxs)) / 2);
+    }
+
+    &.is-checked {
+      .inner {
+        left: calc(100% - calc(var(--ak-size-lg) - var(--ak-size-xxxs)) - calc(var(--ak-size-xxxs) / 2))
+      }
+    }
+  }
+}
+
+
+/*
+  TODO Next
+
+  Use valid and invalid container to display the checkmark and x mark
+  Use the visibility: hidden to hide the checkmark (or x mark) when the toggle is not checked (or checked)
+  The NOT visible entity should be placed on the middle of the toggle to make a fancy animation
+
+*/
