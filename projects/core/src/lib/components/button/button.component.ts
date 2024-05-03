@@ -102,9 +102,9 @@ export class ButtonComponent implements OnChanges {
 
   updateBorder(): string {
     if (this.variant === 'filled')
-      return this.getShade(5)
+      return this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
 
-    return this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
+    return this.getShade(5)
   }
 
   getShade(index: number): string {
