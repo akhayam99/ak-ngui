@@ -1,4 +1,4 @@
-export function generateContrastFromColor(color: string): string {
+export function colorContrast(color: string): string {
   if (!color)
     return '000000';
 

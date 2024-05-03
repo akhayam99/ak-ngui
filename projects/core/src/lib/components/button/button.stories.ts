@@ -54,6 +54,10 @@ const meta: Meta<ButtonComponent> = {
       control: 'boolean',
       description: 'Whether the button is disabled'
     },
+    fullWidth: {
+      control: 'boolean',
+      description: 'Whether the button should take up the full width of its container'
+    }
   },
   args: {
     label: 'BUTTON',
@@ -61,6 +65,7 @@ const meta: Meta<ButtonComponent> = {
     variant: 'filled',
     loading: false,
     disabled: false,
+    fullWidth: false,
     color: 'cblue',
     role: '',
     status: '',

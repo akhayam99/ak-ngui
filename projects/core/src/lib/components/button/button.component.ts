@@ -1,7 +1,8 @@
 import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { akTheme } from '../../theme';
-import { colorKeyFromTheme, generateContrastFromColor } from "../../utils";
+import { ColorContrastPipe } from '../../pipes/color-contrast.pipe';
+import { colorContrast, colorKeyFromTheme } from "../../utils";
+import { colorShade } from '../../utils/colorShade';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { ButtonSize } from './types/size';
 import { ButtonVariant } from './types/variant';
@@ -14,7 +15,8 @@ import { ButtonVariant } from './types/variant';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgIf,
-    SpinnerComponent
+    SpinnerComponent,
+    ColorContrastPipe,
   ],
 })
 export class ButtonComponent implements OnChanges {
@@ -25,6 +27,7 @@ export class ButtonComponent implements OnChanges {
 
   @HostBinding('class.is-disabled') @Input() disabled: boolean = false;
   @HostBinding('class.is-loading') @Input() loading: boolean = false;
+  @HostBinding('class.is-full-width') @Input() fullWidth: boolean = false;
   @HostBinding('class') @Input() size: ButtonSize = 'medium';
 
   @HostBinding('style.background-color') btnBgColor: string = 'white';
@@ -75,34 +78,67 @@ export class ButtonComponent implements OnChanges {
 
   updateBg(): string {
     if (this.variant === 'filled')
-      return this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
+      switch (true) {
+        case this.isActive:
+          return colorShade(this.colorKey, 3)
+        case this.isHover:
+          return colorShade(this.colorKey, 4)
+        default:
+          return colorShade(this.colorKey, 5)
+      }
 
     if (this.variant === 'ghost')
-      return this.isActive ? this.getShade(1) : this.isHover ? this.getShade(0) : 'transparent'
+      switch (true) {
+        case this.isActive:
+          return colorShade(this.colorKey, 1)
+        case this.isHover:
+          return colorShade(this.colorKey, 0)
+        default:
+          return 'transparent'
+      }
 
-    return this.isActive ? this.getShade(1) : this.isHover ? this.getShade(0) : 'white'
+    switch (true) {
+      case this.isActive:
+        return colorShade(this.colorKey, 1)
+      case this.isHover:
+        return colorShade(this.colorKey, 0)
+      default:
+        return "#FFFFFF"
+    }
   }
 
   updateColor(): string {
     if (this.variant === 'filled')
-      return this.isActive ? this.getContrast(this.getShade(3)) : this.isHover ? this.getContrast(this.getShade(4)) : this.getContrast(this.getShade(5))
+      switch (true) {
+        case this.isActive:
+          return colorContrast(colorShade(this.colorKey, 3))
+        case this.isHover:
+          return colorContrast(colorShade(this.colorKey, 4))
+        default:
+          return colorContrast(colorShade(this.colorKey, 5))
+      }
 
-    return this.isActive ? this.getContrast(this.getShade(1)) : this.isHover ? this.getContrast(this.getShade(0)) : this.getShade(5)
+    switch (true) {
+      case this.isActive:
+        return colorContrast(colorShade(this.colorKey, 1))
+      case this.isHover:
+        return colorContrast(colorShade(this.colorKey, 0))
+      default:
+        return colorShade(this.colorKey, 5)
+    }
   }
 
   updateBorder(): string {
-    if (this.variant === 'filled')
-      return this.isActive ? this.getShade(3) : this.isHover ? this.getShade(4) : this.getShade(5)
+    if (this.variant !== 'filled')
+      return colorShade(this.colorKey, 5)
 
-    return this.getShade(5)
+    switch (true) {
+      case this.isActive:
+        return colorShade(this.colorKey, 3)
+      case this.isHover:
+        return colorShade(this.colorKey, 4)
+      default:
+        return colorShade(this.colorKey, 5)
+    }
   }
-
-  getShade(index: number): string {
-    return akTheme.colors[this.colorKey]?.[index]
-  }
-
-  getContrast(color: string): string {
-    return generateContrastFromColor(color)
-  }
-
 }
