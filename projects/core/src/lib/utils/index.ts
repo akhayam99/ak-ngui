@@ -1,6 +1,9 @@
-import { LoadTheme } from "../theme"
+import { AkCreateTheme } from "../theme"
 
-export const StorybookThemeDecorator = (story: string): string => {
-  LoadTheme({})
-  return `<div> ${story} </div>`
-}
+export const
+  StorybookThemeDecorator = (story: string): string => {
+    AkCreateTheme({
+
+    })
+    return `<div> ${story} </div>`
+  }

@@ -7,7 +7,7 @@ export const BUTTON_VARIANTS = ({
       ${roles.map(role => `
         <div style="display: flex; gap: 16px; align-items: center">
           ${variants.map(variant => `
-            <button [ak-button] [label]="'${variant.toUpperCase()}'" [variant]="'${variant}'" [role]="'${role}'"></button>
+            <button [ak-button] [label]="'${variant.toUpperCase()}'" [variant]="'${variant}'" [color]="'${role}'"></button>
           `).join('')}
         </div>
       `).join('')}
