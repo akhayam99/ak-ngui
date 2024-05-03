@@ -1,4 +1,4 @@
-import { generateColorRow } from ".";
+import { generateColorRow } from "../../../utils";
 
 export function generateThemeStatus(colors: { [key: string]: string[] }, status: any) {
   return Object

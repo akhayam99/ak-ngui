@@ -1,4 +1,4 @@
-import { generateColorRow } from ".";
+import { generateColorRow } from "../../../utils";
 
 export function generateThemeRoles(colors: { [key: string]: string[] }, roles: any) {
   return Object

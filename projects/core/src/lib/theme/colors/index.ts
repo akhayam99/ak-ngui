@@ -1,9 +1,9 @@
-import { DEFAULT_BLUE } from "./_blue";
-import { DEFAULT_GREEN } from "./_green";
-import { DEFAULT_NEUTRAL } from "./_neutral";
-import { DEFAULT_ORANGE } from "./_orange";
-import { DEFAULT_RED } from "./_red";
-import { DEFAULT_YELLOW } from "./_yellow";
+import { DEFAULT_BLUE } from "./elements/_blue";
+import { DEFAULT_GREEN } from "./elements/_green";
+import { DEFAULT_NEUTRAL } from "./elements/_neutral";
+import { DEFAULT_ORANGE } from "./elements/_orange";
+import { DEFAULT_RED } from "./elements/_red";
+import { DEFAULT_YELLOW } from "./elements/_yellow";
 
 export const DEFAULT_COLORS = {
   cblue: DEFAULT_BLUE,

@@ -1,6 +1,6 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
-import { StorybookThemeDecorator } from '../../utils';
+import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorator';
 import { ButtonComponent } from './button.component';
 import { BUTTON_COLORS } from './stories/colors';
 import { BUTTON_ROLES } from './stories/roles';

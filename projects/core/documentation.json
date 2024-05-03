@@ -31,6 +31,16 @@
                 "defaultValue": "{}"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -119,6 +129,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
                 "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The text to display on the button'\n    },\n    onClick: {\n      action: 'clicked',\n      description: 'The action to perform when the button is clicked'\n    },\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', 'primary', 'secondary'],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', 'error', 'info', 'success', 'warning'],\n      description: 'The status of the button (overrides color and role)'\n    },\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n      description: 'The size of the button'\n    },\n    variant: {\n      control: 'radio',\n      options: ['filled', 'outlined', 'ghost'],\n      description: 'The variant of the button'\n    },\n    loading: {\n      control: 'boolean',\n      description: 'Whether the button is in a loading state'\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the button is disabled'\n    },\n  },\n  args: {\n    label: 'BUTTON',\n    size: 'medium',\n    variant: 'filled',\n    loading: false,\n    disabled: false,\n    color: 'cblue',\n    role: '',\n    status: '',\n    onClick: fn(() => console.log('Clicked'))\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SpinnerComponent>",
+                "defaultValue": "{\n  title: 'Core/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'cblue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
             },
             {
                 "name": "preview",
@@ -246,6 +266,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SpinnerComponent>",
+                "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
@@ -320,6 +351,28 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "() => BUTTON_VARIANTS"
+                }
+            ],
+            "projects/core/src/lib/components/spinner/spinner.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SpinnerComponent>",
+                    "defaultValue": "{\n  title: 'Core/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'cblue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
                 }
             ],
             "projects/core/src/stories/button.stories.ts": [
@@ -505,6 +558,19 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "projects/core/src/lib/components/spinner/spinner.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SpinnerComponent>",
+                    "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -589,6 +655,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Variant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { akTheme } from '../../theme';
-import { generateContrastFromColor } from '../../theme/utils';
+import { colorKeyFromTheme, generateContrastFromColor } from "../../utils";
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { ButtonSize } from './types/size';
 import { ButtonVariant } from './types/variant';
@@ -53,7 +53,7 @@ export class ButtonComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (!changes?.['color'] && !changes?.['role'] && !changes?.['status']) return
-    this.colorKey = this.updateColorKey()
+    this.colorKey = colorKeyFromTheme(this.status || this.role || this.color || '')
     this.updateButtonStyle()
   }
 
@@ -71,16 +71,6 @@ export class ButtonComponent implements OnChanges {
     this.btnBgColor = this.updateBg()
     this.btnColor = this.updateColor()
     this.btnBorder = this.updateBorder()
-  }
-
-  updateColorKey(): string {
-    if (!!this.status)
-      return akTheme.status[this.status] || 'cneutral'
-
-    if (!!this.role)
-      return akTheme.roles[this.role] || 'cneutral'
-
-    return this.color || 'cneutral'
   }
 
   updateBg(): string {

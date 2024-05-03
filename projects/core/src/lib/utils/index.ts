@@ -1,8 +1,4 @@
-import { CreateTheme } from "../theme"
-
-export const
-  StorybookThemeDecorator = (story: string): string => {
-    CreateTheme({})
-
-    return `<div> ${story} </div>`
-  }
+export * from './colorFromKey'
+export * from './colorKeyFromTheme'
+export * from './generateColorRow'
+export * from './generateContrastFromColor'

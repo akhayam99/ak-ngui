@@ -1,14 +1,43 @@
 import { NgStyle } from '@angular/common';
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ColorFromKeyPipe } from '../../pipes';
 
 @Component({
   selector: 'ak-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss'],
   standalone: true,
-  imports: [NgStyle]
+  imports: [
+    NgStyle,
+    ColorFromKeyPipe,
+  ]
 })
 
-export class SpinnerComponent {
-  @HostBinding('attr.color') @Input() color: string = 'cblue';
+export class SpinnerComponent implements OnChanges {
+
+  @Input() color?: string;
+  @Input() size: number = 18;
+
+  @HostBinding('style.width.px') width: number = this.size;
+  @HostBinding('style.height.px') height: number = this.size;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!!changes?.['size'])
+      this.updateSizes()
+  }
+
+  updateSizes(): void {
+    this.checkSize()
+    this.width = this.size
+    this.height = this.size
+  }
+
+  checkSize(): void {
+    if (this.size < 8)
+      this.size = 8
+
+    if (this.size > 100)
+      this.size = 100
+  }
+
 }
