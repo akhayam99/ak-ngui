@@ -1,5 +1,5 @@
 const roles = ['primary', 'secondary']
-const variants = ['filled', 'outlined']
+const variants = ['filled', 'outlined', 'ghost']
 
 export const BUTTON_VARIANTS = ({
   template: `

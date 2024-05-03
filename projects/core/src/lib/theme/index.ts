@@ -24,7 +24,7 @@ export let akTheme: AkTheme = {
   status: DEFAULT_STATUS
 }
 
-export const AkCreateTheme = (params: AkTheme) => {
+export const CreateTheme = (params: AkTheme) => {
   if (themeLoaded)
     return
 

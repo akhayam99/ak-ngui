@@ -1,9 +1,8 @@
-import { AkCreateTheme } from "../theme"
+import { CreateTheme } from "../theme"
 
 export const
   StorybookThemeDecorator = (story: string): string => {
-    AkCreateTheme({
+    CreateTheme({})
 
-    })
     return `<div> ${story} </div>`
   }
