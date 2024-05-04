@@ -20,7 +20,7 @@ export class ToggleComponent {
 
   @Input() color: string = 'cneutral';
   @Input() label: string = '';
-  @Input() showOnOff?: boolean;
+  @Input() showIO?: boolean;
   @Input() size: ToggleSize = 'md';
   @Input() value: boolean = false;
 

@@ -30,7 +30,7 @@ const meta: Meta<ToggleComponent> = {
       control: 'boolean',
       description: 'The value of the toggle'
     },
-    showOnOff: {
+    showIO: {
       control: 'boolean',
       description: 'Whether to show the on/off labels'
     },
@@ -46,7 +46,7 @@ const meta: Meta<ToggleComponent> = {
     size: 'md',
     value: false,
     onChange: () => console.log('Changed'),
-    showOnOff: false,
+    showIO: false,
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
 };

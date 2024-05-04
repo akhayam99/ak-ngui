@@ -31,7 +31,7 @@ export class ToggleContainerComponent {
   @HostListener('mouseleave') onMouseLeave() { this.invertHoverState() }
 
   @Input() color: string = 'cneutral';
-  @Input() showOnOff: boolean = false
+  @Input() showIO: boolean = false
   @Input() value: boolean = false;
 
   @Output() onChange = new EventEmitter<boolean>();
