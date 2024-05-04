@@ -29,6 +29,21 @@ const meta: Meta<CheckboxComponent> = {
       options: ['left', 'right'],
       description: 'The position of the label'
     },
+    color: {
+      control: 'select',
+      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],
+      description: 'The color of the button'
+    },
+    role: {
+      control: 'select',
+      options: ['', 'primary', 'secondary'],
+      description: 'The role of the button (overrides color)'
+    },
+    status: {
+      control: 'select',
+      options: ['', 'error', 'info', 'success', 'warning'],
+      description: 'The status of the button (overrides color and role)'
+    },
   },
   args: {
     size: 'md',
@@ -36,6 +51,9 @@ const meta: Meta<CheckboxComponent> = {
     indeterminate: false,
     label: 'I am a checkbox',
     labelPosition: 'right',
+    color: 'cneutral',
+    role: '',
+    status: '',
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
 };

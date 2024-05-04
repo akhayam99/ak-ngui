@@ -1,12 +1,16 @@
 import { Component, Input } from '@angular/core';
+import { InputLabelComponent } from '../../../input-label/input-label.component';
 
 @Component({
   selector: 'ak-checkbox-detail',
-  templateUrl: 'detail.component.html',
+  template: `<ak-input-label [label]="label" />`,
   styleUrls: ['detail.component.scss'],
-  standalone: true
+  standalone: true,
+  imports: [InputLabelComponent]
 })
 
 export class CheckboxDetailComponent {
+
   @Input() label: string = '';
+
 }

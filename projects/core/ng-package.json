@@ -3,6 +3,7 @@
   "dest": "../../dist/core",
   "assets": [
     "../theme/index.scss",
-    "./src/lib/theme/index.scss"
+    "./src/lib/theme/index.scss",
+    "@fortawesome/fontawesome-free/css/all.min.css"
   ]
 }

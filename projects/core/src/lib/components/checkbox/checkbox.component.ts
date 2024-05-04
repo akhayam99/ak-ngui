@@ -8,15 +8,16 @@ import { CheckboxSize } from './types/CheckboxSize';
   templateUrl: 'checkbox.component.html',
   styleUrls: ['checkbox.component.scss'],
   standalone: true,
-  imports: [
-    CheckboxContainerComponent,
-    CheckboxDetailComponent,
-  ]
+  imports: [CheckboxContainerComponent, CheckboxDetailComponent]
 })
 
 export class CheckboxComponent {
+
   @HostBinding('class') @Input() size: CheckboxSize = 'md';
 
+  @Input() color: string = 'cneutral';
+  @Input() role: string = '';
+  @Input() status: string = '';
   @Input() indeterminate: boolean = false;
   @Input() label: string = '';
   @Input() value: boolean = false;
@@ -29,4 +30,5 @@ export class CheckboxComponent {
     this.value = !this.value;
     this.onChange.emit(this.value);
   }
+
 }
