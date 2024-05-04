@@ -54,7 +54,7 @@ export class ToggleContainerComponent {
   updateToggleColor(): string {
     return this.value
       ? colorFromKey(colorKeyFromTheme(this.color), this.isHover ? 4 : 5)
-      : colorFromKey('cneutral', this.isHover ? 2 : 3)
+      : this.isHover ? colorFromKey(colorKeyFromTheme(this.color), 2) : colorFromKey('cneutral', 3)
   }
 
 }
