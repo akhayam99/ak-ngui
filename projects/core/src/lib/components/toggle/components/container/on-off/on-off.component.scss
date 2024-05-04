@@ -1,0 +1,38 @@
+$width: var(--ak-size-xxs);
+
+:host {
+  position: absolute;
+  transition: .15s;
+  width: 8px;
+  text-align: center;
+
+  &.sm {
+    $left: calc(var(--ak-size-xxxs));
+    font-size: 10px;
+    left: calc(100% - $left - $width);
+
+    &.is-checked {
+      left: $left;
+    }
+  }
+
+  &.md {
+    $left: calc(var(--ak-size-xxs));
+    font-size: 12px;
+    left: calc(100% - $left - $width);
+
+    &.is-checked {
+      left: $left;
+    }
+  }
+
+  &.lg {
+    $left: calc(var(--ak-size-xs));
+    font-size: 14px;
+    left: calc(100% - $left - $width);
+
+    &.is-checked {
+      left: $left;
+    }
+  }
+}

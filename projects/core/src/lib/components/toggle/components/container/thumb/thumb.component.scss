@@ -1,0 +1,50 @@
+:host {
+  position: absolute;
+  border-radius: 50%;
+  transition: .15s;
+  z-index: 1;
+
+  $span: calc((var(--ak-size-xxxs) + var(--ak-size-xxs)) / 2);
+
+  &.sm {
+    $width: calc(var(--ak-size-sm) - $span);
+    $height: calc(var(--ak-size-sm) - $span);
+    height: $height;
+    width: $width;
+    top: calc(50% - ($height / 2));
+    left: calc($span / 2);
+
+    &.is-checked {
+      left: calc(100% - $width - ($span / 2));
+    }
+  }
+
+  &.md {
+    $width: calc(var(--ak-size-md) - $span);
+    $height: calc(var(--ak-size-md) - $span);
+
+    height: $height;
+    width: $width;
+    top: calc(50% - ($height / 2));
+    left: calc($span / 2);
+
+    &.is-checked {
+      left: calc(100% - $width - ($span / 2));
+    }
+  }
+
+  &.lg {
+    $width: calc(var(--ak-size-lg) - $span);
+    $height: calc(var(--ak-size-lg) - $span);
+    height: $height;
+    width: $width;
+    top: calc(50% - ($height / 2));
+    left: calc($span / 2);
+
+    &.is-checked {
+      left: calc(100% - $width - ($span / 2));
+    }
+  }
+
+
+}

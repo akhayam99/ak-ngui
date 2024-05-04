@@ -1,6 +1,7 @@
 import { NgStyle } from '@angular/common';
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { colorContrast, colorFromKey, colorKeyFromTheme } from '../../utils';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ToggleContainerComponent } from './components/container/container.component';
+import { ToggleDetailComponent } from './components/detail/detail.component';
 import { ToggleSize } from './types/ToggleSize';
 
 @Component({
@@ -8,43 +9,25 @@ import { ToggleSize } from './types/ToggleSize';
   templateUrl: 'toggle.component.html',
   styleUrls: ['toggle.component.scss'],
   standalone: true,
-  imports: [NgStyle]
+  imports: [
+    NgStyle,
+    ToggleContainerComponent,
+    ToggleDetailComponent,
+  ]
 })
 
-export class ToggleComponent implements OnChanges {
+export class ToggleComponent {
 
-  innerColor: string = 'white';
-
-  @HostBinding('class.is-checked') @Input() value: boolean = false;
-  @HostBinding('class') @Input() size: ToggleSize = 'md';
-  @HostBinding('style.background-color') toggleColor: string = 'black';
-
-  @HostListener('click') onClickEvent() {
-    this.updateValue()
-  }
-
-  @Input() color?: string;
+  @Input() color: string = 'cneutral';
+  @Input() size: ToggleSize = 'md';
+  @Input() value: boolean = false;
+  @Input() showOnOff?: boolean;
 
   @Output() onChange = new EventEmitter<boolean>();
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (!!changes?.['color'])
-      this.updateColors()
-  }
 
   updateValue(): void {
     this.value = !this.value
     this.onChange.emit(this.value)
-
-    this.updateColors()
   }
-
-  updateColors(): void {
-    this.toggleColor = this.value
-      ? colorFromKey(colorKeyFromTheme(this.color))
-      : colorFromKey('cneutral', 3)
-    this.innerColor = colorContrast(colorFromKey(colorKeyFromTheme(this.color)))
-  }
-
 
 }

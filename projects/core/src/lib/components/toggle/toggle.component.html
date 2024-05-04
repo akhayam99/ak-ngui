@@ -1,1 +1,9 @@
-<div class="inner" [style.background-color]="innerColor"></div>
+<ak-toggle-container
+  (onChange)="updateValue($event)"
+  [color]="color"
+  [value]="value"
+  [showOnOff]="showOnOff"
+  [size]="size"
+/>
+
+<ak-toggle-detail [description]="'description'" />

@@ -1,0 +1,12 @@
+<ak-toggle-container-thumb
+  [isChecked]="value"
+  [size]="size"
+  [style.background-color]="thumbColor"
+/>
+
+<ak-toggle-container-on-off
+  *ngIf="!!showOnOff"
+  [size]="size"
+  [style.color]="thumbColor"
+  [isChecked]="value"
+/>
