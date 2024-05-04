@@ -1,0 +1,26 @@
+:host {
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  user-select: none;
+
+  &.sm {
+    height: var(--ak-size-sm);
+    width: var(--ak-size-sm);
+  }
+
+  &.md {
+    height: var(--ak-size-md);
+    width: var(--ak-size-md);
+  }
+
+  &.lg {
+    height: var(--ak-size-lg);
+    width: var(--ak-size-lg);
+  }
+}

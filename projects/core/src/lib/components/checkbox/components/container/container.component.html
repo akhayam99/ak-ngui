@@ -1,0 +1,14 @@
+<ak-checkbox-container-input [isChecked]="isChecked" [size]="size" />
+
+<input
+  [checked]="isChecked"
+  [size]="size"
+  [type]="'checkbox'"
+  ak-checkbox-container-input
+/>
+
+<ak-checkbox-container-icon
+  *ngIf="isChecked"
+  [size]="size"
+  [isIndeterminate]="isIndeterminate"
+/>
