@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { ToggleContainerComponent } from './components/container/container.component';
 import { ToggleDetailComponent } from './components/detail/detail.component';
 import { ToggleSize } from './types/ToggleSize';
@@ -19,9 +19,12 @@ import { ToggleSize } from './types/ToggleSize';
 export class ToggleComponent {
 
   @Input() color: string = 'cneutral';
+  @Input() label: string = '';
+  @Input() showOnOff?: boolean;
   @Input() size: ToggleSize = 'md';
   @Input() value: boolean = false;
-  @Input() showOnOff?: boolean;
+
+  @HostBinding('class') @Input() labelPosition: 'left' | 'right' = 'right';
 
   @Output() onChange = new EventEmitter<boolean>();
 

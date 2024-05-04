@@ -7,6 +7,15 @@ const meta: Meta<ToggleComponent> = {
   component: ToggleComponent,
   tags: ['autodocs'],
   argTypes: {
+    label: {
+      control: 'text',
+      description: 'The label of the toggle'
+    },
+    labelPosition: {
+      control: 'radio',
+      options: ['left', 'right'],
+      description: 'The position of the label'
+    },
     color: {
       control: 'select',
       options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],
@@ -31,6 +40,8 @@ const meta: Meta<ToggleComponent> = {
     },
   },
   args: {
+    label: 'I am a label',
+    labelPosition: 'right',
     color: 'cblue',
     size: 'md',
     value: false,
