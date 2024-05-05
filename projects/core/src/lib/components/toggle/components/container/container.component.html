@@ -1,3 +1,12 @@
+<input
+  (enterPressed)="onChange.emit()"
+  [bgColor]="toggleColor"
+  [borderColor]="toggleColor"
+  [size]="size"
+  [type]="'checkbox'"
+  ak-toggle-container-input
+/>
+
 <ak-toggle-container-thumb
   [isChecked]="value"
   [size]="size"
@@ -9,12 +18,4 @@
   [isChecked]="value"
   [size]="size"
   [style.color]="thumbColor"
-/>
-
-<input
-  [bgColor]="toggleColor"
-  [borderColor]="toggleColor"
-  [size]="size"
-  [type]="'checkbox'"
-  ak-toggle-container-input
 />
