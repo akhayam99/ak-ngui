@@ -1,12 +1,14 @@
 import { NgIf } from '@angular/common';
-import { Component, HostBinding, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { CheckboxSize } from '../../../types/CheckboxSize';
 
 @Component({
   selector: 'input[ak-checkbox-container-input]',
+  template: '',
   styleUrls: ['input.component.scss'],
   standalone: true,
-  imports: [NgIf]
+  imports: [NgIf],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CheckboxContainerInputComponent {

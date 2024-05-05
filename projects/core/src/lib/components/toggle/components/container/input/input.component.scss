@@ -1,0 +1,27 @@
+:host {
+  appearance: none;
+  border-radius: var(--ak-size-md);
+  border: 1px solid;
+  cursor: pointer;
+  margin: 0;
+
+  &:focus-visible {
+    outline: 2px solid var(--ak-primary-5);
+    outline-offset: 2px;
+  }
+
+  &.sm {
+    height: var(--ak-size-sm);
+    width: calc(var(--ak-size-sm) * 1.75);
+  }
+
+  &.md {
+    height: var(--ak-size-md);
+    width: calc(var(--ak-size-md) * 1.75);
+  }
+
+  &.lg {
+    height: var(--ak-size-lg);
+    width: calc(var(--ak-size-lg) * 1.75);
+  }
+}

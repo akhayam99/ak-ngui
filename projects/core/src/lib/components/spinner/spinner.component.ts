@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ColorFromKeyPipe } from '../../pipes';
 
 @Component({
@@ -10,7 +10,8 @@ import { ColorFromKeyPipe } from '../../pipes';
   imports: [
     NgStyle,
     ColorFromKeyPipe,
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class SpinnerComponent implements OnChanges {

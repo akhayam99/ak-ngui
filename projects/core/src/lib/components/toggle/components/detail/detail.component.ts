@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { InputLabelComponent } from '../../../input-label/input-label.component';
 
 @Component({
@@ -6,7 +6,8 @@ import { InputLabelComponent } from '../../../input-label/input-label.component'
   templateUrl: 'detail.component.html',
   styleUrls: ['detail.component.scss'],
   standalone: true,
-  imports: [InputLabelComponent]
+  imports: [InputLabelComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class ToggleDetailComponent {

@@ -1,7 +1,8 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, HostBinding, HostListener, Input, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output, SimpleChanges } from '@angular/core';
 import { colorContrast, colorFromKey, colorKeyFromTheme } from 'projects/core/src/lib/utils';
 import { ToggleSize } from '../../types/ToggleSize';
+import { ToggleContainerInputComponent } from './input/input.component';
 import { ToggleContainerOnOffComponent } from './on-off/on-off.component';
 import { ToggleContainerThumbComponent } from './thumb/thumb.component';
 
@@ -14,7 +15,9 @@ import { ToggleContainerThumbComponent } from './thumb/thumb.component';
     NgIf,
     ToggleContainerOnOffComponent,
     ToggleContainerThumbComponent,
-  ]
+    ToggleContainerInputComponent,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class ToggleContainerComponent {
@@ -23,15 +26,13 @@ export class ToggleContainerComponent {
   thumbColor: string = 'white';
   toggleColor: string = 'black';
 
-  @HostBinding('class') @Input() size: ToggleSize = 'md';
-  @HostBinding('style.background-color') get backgroundColor() { return this.toggleColor }
-
   @HostListener('click') onClickEvent() { this.onChange.emit() }
   @HostListener('mouseenter') onMouseEnter() { this.invertHoverState() }
   @HostListener('mouseleave') onMouseLeave() { this.invertHoverState() }
 
   @Input() color: string = 'neutral';
   @Input() showIO: boolean = false
+  @Input() size: ToggleSize = 'md';
   @Input() value: boolean = false;
 
   @Output() onChange = new EventEmitter<boolean>();

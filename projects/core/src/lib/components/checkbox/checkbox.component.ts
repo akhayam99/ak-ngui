@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { CheckboxContainerComponent } from './components/container/container.component';
 import { CheckboxDetailComponent } from './components/detail/detail.component';
 import { CheckboxSize } from './types/CheckboxSize';
@@ -8,7 +8,8 @@ import { CheckboxSize } from './types/CheckboxSize';
   templateUrl: 'checkbox.component.html',
   styleUrls: ['checkbox.component.scss'],
   standalone: true,
-  imports: [CheckboxContainerComponent, CheckboxDetailComponent]
+  imports: [CheckboxContainerComponent, CheckboxDetailComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CheckboxComponent {

@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { ColorFromKeyPipe } from 'projects/core/src/lib/pipes';
 import { ColorContrastPipe } from 'projects/core/src/lib/pipes/color-contrast.pipe';
 import { colorKeyFromTheme } from 'projects/core/src/lib/utils';
@@ -18,7 +18,8 @@ import { CheckboxContainerInputComponent } from './input/input.component';
     CheckboxContainerIconComponent,
     ColorContrastPipe,
     ColorFromKeyPipe,
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CheckboxContainerComponent implements OnChanges {

@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { IconComponent } from '../../../../icon/icon.component';
 import { CheckboxSize } from '../../../types/CheckboxSize';
 
@@ -7,7 +7,8 @@ import { CheckboxSize } from '../../../types/CheckboxSize';
   template: `<ak-icon [name]="isIndeterminate ? 'minus' : 'check'">`,
   styleUrls: ['icon.component.scss'],
   standalone: true,
-  imports: [IconComponent]
+  imports: [IconComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CheckboxContainerIconComponent {

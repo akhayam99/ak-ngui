@@ -1,24 +1,6 @@
 :host {
-  position: relative;
-  border-radius: var(--ak-size-md);
-  cursor: pointer;
-  user-select: none;
-  display: flex;
   align-items: center;
-  transition: .3s all;
-
-  &.sm {
-    height: var(--ak-size-sm);
-    width: calc(var(--ak-size-sm) * 1.75);
-  }
-
-  &.md {
-    height: var(--ak-size-md);
-    width: calc(var(--ak-size-md) * 1.75);
-  }
-
-  &.lg {
-    height: var(--ak-size-lg);
-    width: calc(var(--ak-size-lg) * 1.75);
-  }
+  display: flex;
+  position: relative;
+  width: fit-content;
 }

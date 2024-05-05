@@ -51,7 +51,7 @@ const meta: Meta<CheckboxComponent> = {
     indeterminate: false,
     label: 'I am a checkbox',
     labelPosition: 'right',
-    color: 'neutral',
+    color: 'blue',
     role: '',
     status: '',
   },

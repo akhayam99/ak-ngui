@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { ToggleContainerComponent } from './components/container/container.component';
 import { ToggleDetailComponent } from './components/detail/detail.component';
 import { ToggleSize } from './types/ToggleSize';
@@ -13,7 +13,8 @@ import { ToggleSize } from './types/ToggleSize';
     NgStyle,
     ToggleContainerComponent,
     ToggleDetailComponent,
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class ToggleComponent {

@@ -6,7 +6,15 @@
 
 <ak-toggle-container-on-off
   *ngIf="!!showIO"
+  [isChecked]="value"
   [size]="size"
   [style.color]="thumbColor"
-  [isChecked]="value"
+/>
+
+<input
+  [bgColor]="toggleColor"
+  [borderColor]="toggleColor"
+  [size]="size"
+  [type]="'checkbox'"
+  ak-toggle-container-input
 />
