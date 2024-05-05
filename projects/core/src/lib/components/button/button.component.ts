@@ -22,7 +22,7 @@ export class ButtonComponent implements OnChanges {
 
   private isHover = false
   private isActive = false
-  private colorKey = 'cneutral'
+  private colorKey = 'neutral'
 
   @HostBinding('class.is-disabled') @Input() disabled: boolean = false;
   @HostBinding('class.is-loading') @Input() loading: boolean = false;

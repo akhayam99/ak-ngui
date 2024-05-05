@@ -18,7 +18,7 @@ const meta: Meta<ToggleComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],
+      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
       description: 'The color of the toggle'
     },
     size: {
@@ -42,7 +42,7 @@ const meta: Meta<ToggleComponent> = {
   args: {
     label: 'I am a label',
     labelPosition: 'right',
-    color: 'cblue',
+    color: 'blue',
     size: 'md',
     value: false,
     onChange: () => console.log('Changed'),

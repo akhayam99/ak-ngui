@@ -1,5 +1,5 @@
 
 export const DEFAULT_ROLES = {
-  primary: 'cblue',
-  secondary: 'cred',
+  primary: 'blue',
+  secondary: 'red',
 }

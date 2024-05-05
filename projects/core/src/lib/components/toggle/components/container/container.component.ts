@@ -30,7 +30,7 @@ export class ToggleContainerComponent {
   @HostListener('mouseenter') onMouseEnter() { this.invertHoverState() }
   @HostListener('mouseleave') onMouseLeave() { this.invertHoverState() }
 
-  @Input() color: string = 'cneutral';
+  @Input() color: string = 'neutral';
   @Input() showIO: boolean = false
   @Input() value: boolean = false;
 
@@ -54,7 +54,7 @@ export class ToggleContainerComponent {
   updateToggleColor(): string {
     return this.value
       ? colorFromKey(colorKeyFromTheme(this.color), this.isHover ? 4 : 5)
-      : this.isHover ? colorFromKey(colorKeyFromTheme(this.color), 2) : colorFromKey('cneutral', 3)
+      : this.isHover ? colorFromKey(colorKeyFromTheme(this.color), 2) : colorFromKey('neutral', 3)
   }
 
 }

@@ -15,12 +15,12 @@ const meta: Meta<SpinnerComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],
+      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
       description: 'The color of the spinner'
     },
   },
   args: {
-    color: 'cblue',
+    color: 'blue',
     size: 14,
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],

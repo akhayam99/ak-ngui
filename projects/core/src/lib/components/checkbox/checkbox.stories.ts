@@ -31,7 +31,7 @@ const meta: Meta<CheckboxComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],
+      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
       description: 'The color of the button'
     },
     role: {
@@ -51,7 +51,7 @@ const meta: Meta<CheckboxComponent> = {
     indeterminate: false,
     label: 'I am a checkbox',
     labelPosition: 'right',
-    color: 'cneutral',
+    color: 'neutral',
     role: '',
     status: '',
   },

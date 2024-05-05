@@ -1,4 +1,4 @@
-const colors = ['cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'];
+const colors = ['blue', 'red', 'orange', 'green', 'yellow', 'neutral'];
 const variants = ['filled', 'outlined', 'ghost']
 
 // export const BUTTON_COLORS = ({

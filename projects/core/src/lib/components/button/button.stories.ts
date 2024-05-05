@@ -23,7 +23,7 @@ const meta: Meta<ButtonComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'cblue', 'cred', 'corange', 'cgreen', 'cyellow', 'cneutral'],
+      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
       description: 'The color of the button'
     },
     role: {
@@ -66,7 +66,7 @@ const meta: Meta<ButtonComponent> = {
     loading: false,
     disabled: false,
     fullWidth: false,
-    color: 'cblue',
+    color: 'blue',
     role: '',
     status: '',
     onClick: fn(() => console.log('Clicked'))
