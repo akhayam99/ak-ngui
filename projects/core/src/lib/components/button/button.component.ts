@@ -51,6 +51,14 @@ export class ButtonComponent implements OnChanges {
     this.onClick.emit()
   }
 
+  @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
+    if (event.key !== 'Enter')
+      return
+
+    this.invertActiveState()
+    setTimeout(() => this.invertActiveState(), 50);
+  }
+
   @Output() onClick = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges): void {

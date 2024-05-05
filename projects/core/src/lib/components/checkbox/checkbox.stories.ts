@@ -44,6 +44,10 @@ const meta: Meta<CheckboxComponent> = {
       options: ['', 'error', 'info', 'success', 'warning'],
       description: 'The status of the button (overrides color and role)'
     },
+    onChange: {
+      action: 'onChange',
+      description: 'The event emitted when the checkbox value changes'
+    }
   },
   args: {
     size: 'md',
@@ -54,6 +58,7 @@ const meta: Meta<CheckboxComponent> = {
     color: 'blue',
     role: '',
     status: '',
+    onChange: (event) => console.log("Checkbox value: ", event),
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
 };

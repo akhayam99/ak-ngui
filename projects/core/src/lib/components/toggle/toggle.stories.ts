@@ -45,8 +45,8 @@ const meta: Meta<ToggleComponent> = {
     color: 'blue',
     size: 'md',
     value: false,
-    onChange: () => console.log('Changed'),
     showIO: false,
+    onChange: (event) => console.log("Toggle value: ", event),
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
 };
