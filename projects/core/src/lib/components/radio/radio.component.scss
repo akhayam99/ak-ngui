@@ -1,0 +1,10 @@
+:host {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  width: fit-content;
+
+  &.left{
+    flex-direction: row-reverse;
+  }
+}

@@ -1,0 +1,17 @@
+<input
+  (enterPressed)="onChange.emit()"
+  [checked]="isChecked"
+  [size]="size"
+  [type]="'radio'"
+  [bgColor]="colorKey | colorContrast"
+  [borderColor]="
+    isChecked ? (colorKey | colorFromKey) : ('neutral' | colorFromKey)
+  "
+  ak-radio-container-input
+/>
+
+<ak-radio-container-icon
+  *ngIf="isChecked"
+  [size]="size"
+  [color]="colorKey | colorFromKey"
+/>

@@ -1,0 +1,29 @@
+:host {
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.sm {
+    font-size: var(--ak-size-sm);
+    height: var(--ak-size-sm);
+    width: var(--ak-size-sm);
+  }
+
+  &.md {
+    font-size: var(--ak-size-md);
+    height: var(--ak-size-md);
+    width: var(--ak-size-md);
+  }
+
+  &.lg {
+    font-size: var(--ak-size-lg);
+    height: var(--ak-size-lg);
+    width: var(--ak-size-lg);
+  }
+}
