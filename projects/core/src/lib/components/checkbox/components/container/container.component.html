@@ -9,7 +9,9 @@
         ? (colorKey | colorFromKey: 0)
         : '#FFFFFF'
   "
-  [borderColor]="colorKey | colorFromKey"
+  [borderColor]="
+    isChecked ? (colorKey | colorFromKey) : ('neutral' | colorFromKey)
+  "
   ak-checkbox-container-input
 />
 
