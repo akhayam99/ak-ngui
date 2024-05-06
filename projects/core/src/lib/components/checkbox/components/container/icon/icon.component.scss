@@ -12,30 +12,15 @@
   &.sm {
     height: var(--ak-size-sm);
     width: var(--ak-size-sm);
-
-    ak-icon {
-      width: var(--ak-size-xs);
-      height: var(--ak-size-xs);
-    }
   }
 
   &.md {
     height: var(--ak-size-md);
     width: var(--ak-size-md);
-
-    ak-icon {
-      width: var(--ak-size-sm);
-      height: var(--ak-size-sm);
-    }
   }
 
   &.lg {
     height: var(--ak-size-lg);
     width: var(--ak-size-lg);
-
-    ak-icon {
-      width: var(--ak-size-md);
-      height: var(--ak-size-md);
-    }
   }
 }

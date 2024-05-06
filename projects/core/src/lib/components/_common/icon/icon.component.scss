@@ -3,11 +3,48 @@
   display: flex;
   justify-content: center;
 
-  height: var(--ak-size-md);
-  width: var(--ak-size-md);
+  &.xxxs {
+    height: var(--ak-size-xxxs);
+    width: var(--ak-size-xxxs);
+  }
 
-  svg {
-    width: 100%;
-    height: 100%;
+  &.xxs {
+    height: var(--ak-size-xxs);
+    width: var(--ak-size-xxs);
+  }
+
+  &.xs {
+    height: var(--ak-size-xs);
+    width: var(--ak-size-xs);
+  }
+
+  &.sm {
+    height: var(--ak-size-sm);
+    width: var(--ak-size-sm);
+  }
+
+  &.md {
+    height: var(--ak-size-md);
+    width: var(--ak-size-md);
+  }
+
+  &.lg {
+    height: var(--ak-size-lg);
+    width: var(--ak-size-lg);
+  }
+
+  &.xl {
+    height: var(--ak-size-xl);
+    width: var(--ak-size-xl);
+  }
+
+  &.xxl {
+    height: var(--ak-size-xxl);
+    width: var(--ak-size-xxl);
+  }
+
+  &.xxxl {
+    height: var(--ak-size-xxxl);
+    width: var(--ak-size-xxxl);
   }
 }

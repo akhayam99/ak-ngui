@@ -6,6 +6,7 @@ import { colorKeyFromTheme } from 'projects/core/src/lib/utils';
 import { CheckboxSize } from '../../types/CheckboxSize';
 import { CheckboxContainerIconComponent } from './icon/icon.component';
 import { CheckboxContainerInputComponent } from './input/input.component';
+import { IconComponent } from '../../../_common/icon/icon.component';
 
 @Component({
   selector: 'ak-checkbox-container',
