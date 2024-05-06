@@ -1,18 +1,14 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
-import { StorybookThemeDecorator } from '../decorator/storybook-theme-decorator';
+import { StorybookThemeDecorator } from '../lib/decorator/storybook-theme-decorator';
 import { PaletteComponent } from './palette.component';
 
 const meta: Meta<PaletteComponent> = {
   title: 'Palette',
   component: PaletteComponent,
   tags: ['autodocs'],
-  argTypes: {
-  },
-  args: {
-
-  },
+  argTypes: {},
+  args: {},
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
-
 };
 
 export default meta;

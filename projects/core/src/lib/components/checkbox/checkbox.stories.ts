@@ -4,7 +4,7 @@ import { akTheme } from '../../theme';
 import { CheckboxComponent } from './checkbox.component';
 
 const meta: Meta<CheckboxComponent> = {
-  title: 'Core/Checkbox',
+  title: 'Input/Checkbox',
   component: CheckboxComponent,
   tags: ['autodocs'],
   argTypes: {

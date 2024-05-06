@@ -4,7 +4,7 @@ import { akTheme } from '../../theme';
 import { SpinnerComponent } from './spinner.component';
 
 const meta: Meta<SpinnerComponent> = {
-  title: 'Core/Spinner',
+  title: 'Feedback/Spinner',
   component: SpinnerComponent,
   tags: ['autodocs'],
   argTypes: {

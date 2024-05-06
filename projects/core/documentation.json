@@ -24,7 +24,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/palette/palette.stories.ts",
+                "file": "projects/core/src/palette/palette.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -91,94 +91,14 @@
                 "defaultValue": "{}"
             },
             {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PageComponent>",
-                "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/palette/palette.stories.ts",
+                "file": "projects/core/src/palette/palette.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PaletteComponent>",
-                "defaultValue": "{\n  title: 'Palette',\n  component: PaletteComponent,\n  tags: ['autodocs'],\n  argTypes: {\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                "defaultValue": "{\n  title: 'Palette',\n  component: PaletteComponent,\n  tags: ['autodocs'],\n  argTypes: {},\n  args: {},\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "meta",
@@ -188,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The text to display on the button'\n    },\n    onClick: {\n      action: 'clicked',\n      description: 'The action to perform when the button is clicked'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n      description: 'The size of the button'\n    },\n    variant: {\n      control: 'radio',\n      options: ['filled', 'outlined', 'ghost'],\n      description: 'The variant of the button'\n    },\n    loading: {\n      control: 'boolean',\n      description: 'Whether the button is in a loading state'\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the button is disabled'\n    },\n    fullWidth: {\n      control: 'boolean',\n      description: 'Whether the button should take up the full width of its container'\n    }\n  },\n  args: {\n    label: 'BUTTON',\n    size: 'medium',\n    variant: 'filled',\n    loading: false,\n    disabled: false,\n    fullWidth: false,\n    color: 'blue',\n    role: '',\n    status: '',\n    onClick: fn(() => console.log('Clicked'))\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                "defaultValue": "{\n  title: 'Action/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The text to display on the button'\n    },\n    onClick: {\n      action: 'clicked',\n      description: 'The action to perform when the button is clicked'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n      description: 'The size of the button'\n    },\n    variant: {\n      control: 'radio',\n      options: ['filled', 'outlined', 'ghost'],\n      description: 'The variant of the button'\n    },\n    loading: {\n      control: 'boolean',\n      description: 'Whether the button is in a loading state'\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the button is disabled'\n    },\n    fullWidth: {\n      control: 'boolean',\n      description: 'Whether the button should take up the full width of its container'\n    }\n  },\n  args: {\n    label: 'BUTTON',\n    size: 'medium',\n    variant: 'filled',\n    loading: false,\n    disabled: false,\n    fullWidth: false,\n    color: 'blue',\n    role: '',\n    status: '',\n    onClick: (() => console.log('Clicked'))\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
             },
             {
                 "name": "meta",
@@ -198,7 +118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CheckboxComponent>",
-                "defaultValue": "{\n  title: 'Core/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the checkbox'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the checkbox'\n    },\n    indeterminate: {\n      control: 'boolean',\n      description: 'The indeterminate state of the checkbox'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the checkbox'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the checkbox value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    indeterminate: false,\n    label: 'I am a checkbox',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Checkbox value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                "defaultValue": "{\n  title: 'Input/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the checkbox'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the checkbox'\n    },\n    indeterminate: {\n      control: 'boolean',\n      description: 'The indeterminate state of the checkbox'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the checkbox'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the checkbox value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    indeterminate: false,\n    label: 'I am a checkbox',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Checkbox value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "meta",
@@ -208,7 +128,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<InputComponent>",
-                "defaultValue": "{\n  title: 'Core/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                "defaultValue": "{\n  title: 'Input/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "meta",
@@ -218,7 +138,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<RadioComponent>",
-                "defaultValue": "{\n  title: 'Core/Radio',\n  component: RadioComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the radio'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the radio'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the radio'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the radio value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    label: 'I am a radio',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Radio value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                "defaultValue": "{\n  title: 'Input/Radio',\n  component: RadioComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the radio'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the radio'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the radio'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the radio value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    label: 'I am a radio',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Radio value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "meta",
@@ -228,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SpinnerComponent>",
-                "defaultValue": "{\n  title: 'Core/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'blue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                "defaultValue": "{\n  title: 'Feedback/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'blue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
             },
             {
                 "name": "meta",
@@ -238,7 +158,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ToggleComponent>",
-                "defaultValue": "{\n  title: 'Core/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The label of the toggle'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: akTheme.colorKeys,\n      description: 'The color of the toggle'\n    },\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the toggle'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the toggle'\n    },\n    showIO: {\n      control: 'boolean',\n      description: 'Whether to show the on/off labels'\n    },\n    onChange: {\n      action: 'changed',\n      description: 'The action to perform when the toggle is changed'\n    },\n  },\n  args: {\n    label: 'I am a label',\n    labelPosition: 'right',\n    color: 'blue',\n    size: 'md',\n    value: false,\n    showIO: false,\n    onChange: (event) => console.log(\"Toggle value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                "defaultValue": "{\n  title: 'Input/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The label of the toggle'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: akTheme.colorKeys,\n      description: 'The color of the toggle'\n    },\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the toggle'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the toggle'\n    },\n    showIO: {\n      control: 'boolean',\n      description: 'Whether to show the on/off labels'\n    },\n    onChange: {\n      action: 'changed',\n      description: 'The action to perform when the toggle is changed'\n    },\n  },\n  args: {\n    label: 'I am a label',\n    labelPosition: 'right',\n    color: 'blue',\n    size: 'md',\n    value: false,\n    showIO: false,\n    onChange: (event) => console.log(\"Toggle value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "preview",
@@ -251,16 +171,6 @@
                 "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
             },
             {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-            },
-            {
                 "name": "Roles",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -271,16 +181,6 @@
                 "defaultValue": "() => BUTTON_ROLES"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
                 "name": "Sizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -289,16 +189,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => BUTTON_SIZES"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Status",
@@ -327,41 +217,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/core/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/core/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<PageComponent>",
-                "file": "projects/core/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<PaletteComponent>",
-                "file": "projects/core/src/lib/palette/palette.stories.ts",
+                "file": "projects/core/src/palette/palette.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -465,7 +322,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Core/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The text to display on the button'\n    },\n    onClick: {\n      action: 'clicked',\n      description: 'The action to perform when the button is clicked'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n      description: 'The size of the button'\n    },\n    variant: {\n      control: 'radio',\n      options: ['filled', 'outlined', 'ghost'],\n      description: 'The variant of the button'\n    },\n    loading: {\n      control: 'boolean',\n      description: 'Whether the button is in a loading state'\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the button is disabled'\n    },\n    fullWidth: {\n      control: 'boolean',\n      description: 'Whether the button should take up the full width of its container'\n    }\n  },\n  args: {\n    label: 'BUTTON',\n    size: 'medium',\n    variant: 'filled',\n    loading: false,\n    disabled: false,\n    fullWidth: false,\n    color: 'blue',\n    role: '',\n    status: '',\n    onClick: fn(() => console.log('Clicked'))\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                    "defaultValue": "{\n  title: 'Action/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The text to display on the button'\n    },\n    onClick: {\n      action: 'clicked',\n      description: 'The action to perform when the button is clicked'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n      description: 'The size of the button'\n    },\n    variant: {\n      control: 'radio',\n      options: ['filled', 'outlined', 'ghost'],\n      description: 'The variant of the button'\n    },\n    loading: {\n      control: 'boolean',\n      description: 'Whether the button is in a loading state'\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the button is disabled'\n    },\n    fullWidth: {\n      control: 'boolean',\n      description: 'Whether the button should take up the full width of its container'\n    }\n  },\n  args: {\n    label: 'BUTTON',\n    size: 'medium',\n    variant: 'filled',\n    loading: false,\n    disabled: false,\n    fullWidth: false,\n    color: 'blue',\n    role: '',\n    status: '',\n    onClick: (() => console.log('Clicked'))\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
                 },
                 {
                     "name": "Roles",
@@ -508,12 +365,12 @@
                     "defaultValue": "() => BUTTON_VARIANTS"
                 }
             ],
-            "projects/core/src/lib/palette/palette.stories.ts": [
+            "projects/core/src/palette/palette.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/palette/palette.stories.ts",
+                    "file": "projects/core/src/palette/palette.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -523,11 +380,11 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/palette/palette.stories.ts",
+                    "file": "projects/core/src/palette/palette.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PaletteComponent>",
-                    "defaultValue": "{\n  title: 'Palette',\n  component: PaletteComponent,\n  tags: ['autodocs'],\n  argTypes: {\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                    "defaultValue": "{\n  title: 'Palette',\n  component: PaletteComponent,\n  tags: ['autodocs'],\n  argTypes: {},\n  args: {},\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/lib/components/checkbox/checkbox.stories.ts": [
@@ -549,7 +406,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<CheckboxComponent>",
-                    "defaultValue": "{\n  title: 'Core/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the checkbox'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the checkbox'\n    },\n    indeterminate: {\n      control: 'boolean',\n      description: 'The indeterminate state of the checkbox'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the checkbox'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the checkbox value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    indeterminate: false,\n    label: 'I am a checkbox',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Checkbox value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                    "defaultValue": "{\n  title: 'Input/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the checkbox'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the checkbox'\n    },\n    indeterminate: {\n      control: 'boolean',\n      description: 'The indeterminate state of the checkbox'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the checkbox'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the checkbox value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    indeterminate: false,\n    label: 'I am a checkbox',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Checkbox value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/lib/components/input/input.stories.ts": [
@@ -571,7 +428,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputComponent>",
-                    "defaultValue": "{\n  title: 'Core/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                    "defaultValue": "{\n  title: 'Input/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/lib/components/radio/radio.stories.ts": [
@@ -593,7 +450,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<RadioComponent>",
-                    "defaultValue": "{\n  title: 'Core/Radio',\n  component: RadioComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the radio'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the radio'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the radio'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the radio value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    label: 'I am a radio',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Radio value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                    "defaultValue": "{\n  title: 'Input/Radio',\n  component: RadioComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the radio'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the radio'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the radio'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the radio value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    label: 'I am a radio',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Radio value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/lib/components/spinner/spinner.stories.ts": [
@@ -615,7 +472,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SpinnerComponent>",
-                    "defaultValue": "{\n  title: 'Core/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'blue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
+                    "defaultValue": "{\n  title: 'Feedback/Spinner',\n  component: SpinnerComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'range',\n      min: 8,\n      max: 80,\n      description: 'The size of the spinner in pixels. [8 - 80]'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the spinner'\n    },\n  },\n  args: {\n    color: 'blue',\n    size: 14,\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n\n}"
                 }
             ],
             "projects/core/src/lib/components/toggle/toggle.stories.ts": [
@@ -637,123 +494,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ToggleComponent>",
-                    "defaultValue": "{\n  title: 'Core/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The label of the toggle'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: akTheme.colorKeys,\n      description: 'The color of the toggle'\n    },\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the toggle'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the toggle'\n    },\n    showIO: {\n      control: 'boolean',\n      description: 'Whether to show the on/off labels'\n    },\n    onChange: {\n      action: 'changed',\n      description: 'The action to perform when the toggle is changed'\n    },\n  },\n  args: {\n    label: 'I am a label',\n    labelPosition: 'right',\n    color: 'blue',\n    size: 'md',\n    value: false,\n    showIO: false,\n    onChange: (event) => console.log(\"Toggle value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
-                }
-            ],
-            "projects/core/src/stories/button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-                }
-            ],
-            "projects/core/src/stories/header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-                }
-            ],
-            "projects/core/src/stories/page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PageComponent>",
-                    "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                    "defaultValue": "{\n  title: 'Input/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n      description: 'The label of the toggle'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: akTheme.colorKeys,\n      description: 'The color of the toggle'\n    },\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the toggle'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the toggle'\n    },\n    showIO: {\n      control: 'boolean',\n      description: 'Whether to show the on/off labels'\n    },\n    onChange: {\n      action: 'changed',\n      description: 'The action to perform when the toggle is changed'\n    },\n  },\n  args: {\n    label: 'I am a label',\n    labelPosition: 'right',\n    color: 'blue',\n    size: 'md',\n    value: false,\n    showIO: false,\n    onChange: (event) => console.log(\"Toggle value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/.storybook/preview.ts": [
@@ -772,52 +513,13 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/core/src/stories/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/core/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/core/src/stories/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/core/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/core/src/stories/page.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PageComponent>",
-                    "file": "projects/core/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/core/src/lib/palette/palette.stories.ts": [
+            "projects/core/src/palette/palette.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<PaletteComponent>",
-                    "file": "projects/core/src/lib/palette/palette.stories.ts",
+                    "file": "projects/core/src/palette/palette.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1090,7 +792,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/core/src/lib/palette/palette.stories.ts",
+                "filePath": "projects/core/src/palette/palette.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1100,117 +802,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/core/src/lib/palette/palette.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/stories/page.stories.ts",
+                "filePath": "projects/core/src/palette/palette.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

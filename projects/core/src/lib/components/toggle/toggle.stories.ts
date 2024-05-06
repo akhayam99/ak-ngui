@@ -1,10 +1,10 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
 import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorator';
-import { ToggleComponent } from './toggle.component';
 import { akTheme } from '../../theme';
+import { ToggleComponent } from './toggle.component';
 
 const meta: Meta<ToggleComponent> = {
-  title: 'Core/Toggle',
+  title: 'Input/Toggle',
   component: ToggleComponent,
   tags: ['autodocs'],
   argTypes: {

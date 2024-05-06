@@ -1,5 +1,4 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
-import { fn } from '@storybook/test';
 import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorator';
 import { akTheme } from '../../theme';
 import { ButtonComponent } from './button.component';
@@ -10,7 +9,7 @@ import { BUTTON_STATUS } from './stories/status';
 import { BUTTON_VARIANTS } from './stories/variants';
 
 const meta: Meta<ButtonComponent> = {
-  title: 'Core/Button',
+  title: 'Action/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
   argTypes: {
@@ -70,7 +69,7 @@ const meta: Meta<ButtonComponent> = {
     color: 'blue',
     role: '',
     status: '',
-    onClick: fn(() => console.log('Clicked'))
+    onClick: (() => console.log('Clicked'))
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
 

@@ -4,7 +4,7 @@ import { akTheme } from '../../theme';
 import { RadioComponent } from './radio.component';
 
 const meta: Meta<RadioComponent> = {
-  title: 'Core/Radio',
+  title: 'Input/Radio',
   component: RadioComponent,
   tags: ['autodocs'],
   argTypes: {

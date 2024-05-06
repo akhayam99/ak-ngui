@@ -3,7 +3,7 @@ import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorat
 import { InputComponent } from './input.component';
 
 const meta: Meta<InputComponent> = {
-  title: 'Core/Input',
+  title: 'Input/Input',
   component: InputComponent,
   tags: ['autodocs'],
   argTypes: {

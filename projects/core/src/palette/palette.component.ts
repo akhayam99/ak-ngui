@@ -1,7 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ColorFromKeyPipe } from '../pipes';
-import { akTheme } from '../theme';
+import { ColorFromKeyPipe } from '../lib/pipes';
+import { akTheme } from '../lib/theme';
 import { PaletteColorComponent } from './color/color.component';
 
 @Component({
