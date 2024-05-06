@@ -4,11 +4,7 @@
   [size]="size"
   [type]="'checkbox'"
   [bgColor]="
-    isChecked
-      ? (colorKey | colorFromKey: (isHover ? 4 : 5))
-      : isHover
-        ? (colorKey | colorFromKey: 0)
-        : '#FFFFFF'
+    isChecked ? (colorKey | colorFromKey: (isHover ? 4 : 5)) : '#FFFFFF'
   "
   [borderColor]="
     isChecked ? (colorKey | colorFromKey) : ('gray' | colorFromKey)

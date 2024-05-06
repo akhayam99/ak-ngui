@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { InputLabelComponent } from '../../../input-label/input-label.component';
+import { InputLabelComponent } from '../../../_common/input-label/input-label.component';
 
 @Component({
   selector: 'ak-radio-detail',
