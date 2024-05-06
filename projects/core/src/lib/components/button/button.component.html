@@ -1,4 +1,7 @@
 <div class="spinner-container" *ngIf="loading">
-  <ak-spinner [color]="!!variant === 'filled' && colorKey" [size]="14" />
+  <ak-spinner
+    [color]="!!variant === 'filled' && (colorKey | colorFromKey)"
+    [size]="14"
+  />
 </div>
 <span>{{ label }}</span>

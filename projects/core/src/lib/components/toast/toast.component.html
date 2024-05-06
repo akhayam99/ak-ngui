@@ -1,0 +1,19 @@
+<ng-container *ngIf="colorKey | colorFromKey as hex">
+  <ak-toast-state [color]="hex" />
+
+  <ng-container *ngIf="!!status">
+    <ak-toast-status [status]="status" [color]="hex" />
+  </ng-container>
+
+  <div class="message">
+    <h4 [style.color]="hex">{{ title }}</h4>
+    <p>{{ message }}</p>
+  </div>
+
+  <ak-toast-action
+    (closeClick)="closeClick.emit()"
+    [closable]="closable"
+    [color]="hex"
+    [loading]="loading"
+  />
+</ng-container>

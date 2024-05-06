@@ -1,6 +1,6 @@
 import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ColorFromKeyPipe } from '../../pipes';
+import { colorFromKey } from '../../utils';
 
 @Component({
   selector: 'ak-spinner',
@@ -9,12 +9,13 @@ import { ColorFromKeyPipe } from '../../pipes';
   standalone: true,
   imports: [
     NgStyle,
-    ColorFromKeyPipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class SpinnerComponent implements OnChanges {
+
+  hex: string = ''
 
   @Input() color?: string;
   @Input() size: number = 18;
@@ -25,6 +26,19 @@ export class SpinnerComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (!!changes?.['size'])
       this.updateSizes()
+
+    if (!!changes?.['color'])
+      this.hex = this.updateColor()
+  }
+
+  updateColor(): string {
+    if (!this.color)
+      return ''
+
+    if (this.color?.includes('var'))
+      return this.color
+
+    return colorFromKey(this.color)
   }
 
   updateSizes(): void {

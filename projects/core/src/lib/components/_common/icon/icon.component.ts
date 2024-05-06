@@ -1,8 +1,6 @@
 import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
-import { IconCheckComponent } from './svg/check.component';
-import { IconCircleDotComponent } from './svg/circle-dot.component';
-import { IconMinusComponent } from './svg/minus.component';
+import { SVG_ICON_COMPONENTS } from './svg';
 
 @Component({
   selector: 'ak-icon[name]',
@@ -11,9 +9,7 @@ import { IconMinusComponent } from './svg/minus.component';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    IconCheckComponent,
-    IconCircleDotComponent,
-    IconMinusComponent,
+    ...SVG_ICON_COMPONENTS,
     NgIf,
   ]
 })

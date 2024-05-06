@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ColorFromKeyPipe } from '../../pipes';
 import { ColorContrastPipe } from '../../pipes/color-contrast.pipe';
 import { colorContrast, colorFromKey, colorKeyFromTheme } from "../../utils";
 import { SpinnerComponent } from '../spinner/spinner.component';
@@ -13,9 +14,10 @@ import { ButtonVariant } from './types/variant';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    ColorContrastPipe,
+    ColorFromKeyPipe,
     NgIf,
     SpinnerComponent,
-    ColorContrastPipe,
   ],
 })
 export class ButtonComponent implements OnChanges {
