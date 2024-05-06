@@ -1,5 +1,6 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
 import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorator';
+import { akTheme } from '../../theme';
 import { CheckboxComponent } from './checkbox.component';
 
 const meta: Meta<CheckboxComponent> = {
@@ -31,17 +32,17 @@ const meta: Meta<CheckboxComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
+      options: ['', ...(akTheme.colorKeys as string[])],
       description: 'The color of the button'
     },
     role: {
       control: 'select',
-      options: ['', 'primary', 'secondary'],
+      options: ['', ...(akTheme.roleKeys as string[])],
       description: 'The role of the button (overrides color)'
     },
     status: {
       control: 'select',
-      options: ['', 'error', 'info', 'success', 'warning'],
+      options: ['', ...(akTheme.statusKeys as string[])],
       description: 'The status of the button (overrides color and role)'
     },
     onChange: {

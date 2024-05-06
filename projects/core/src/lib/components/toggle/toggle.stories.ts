@@ -1,6 +1,7 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
 import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorator';
 import { ToggleComponent } from './toggle.component';
+import { akTheme } from '../../theme';
 
 const meta: Meta<ToggleComponent> = {
   title: 'Core/Toggle',
@@ -18,7 +19,7 @@ const meta: Meta<ToggleComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
+      options: akTheme.colorKeys,
       description: 'The color of the toggle'
     },
     size: {

@@ -16,7 +16,7 @@ export class CheckboxComponent {
 
   @HostBinding('class') @Input() size: CheckboxSize = 'md';
 
-  @Input() color: string = 'neutral';
+  @Input() color: string = 'gray';
   @Input() role: string = '';
   @Input() status: string = '';
   @Input() indeterminate: boolean = false;

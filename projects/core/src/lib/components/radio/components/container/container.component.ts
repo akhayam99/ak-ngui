@@ -24,7 +24,7 @@ import { RadioContainerInputComponent } from './input/input.component';
 
 export class RadioContainerComponent implements OnChanges {
 
-  colorKey: string = 'neutral';
+  colorKey: string = 'gray';
   isHover: boolean = false;
 
   @HostBinding('class') @Input() size: RadioSize = 'md';

@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { colorContrast, colorFromKey, colorKeyFromTheme } from 'projects/core/src/lib/utils';
 import { ToggleSize } from '../../types/ToggleSize';
 import { ToggleContainerInputComponent } from './input/input.component';
@@ -20,7 +20,7 @@ import { ToggleContainerThumbComponent } from './thumb/thumb.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class ToggleContainerComponent {
+export class ToggleContainerComponent implements OnChanges {
 
   isHover: boolean = false;
   thumbColor: string = 'white';
@@ -30,7 +30,7 @@ export class ToggleContainerComponent {
   @HostListener('mouseenter') onMouseEnter() { this.invertHoverState() }
   @HostListener('mouseleave') onMouseLeave() { this.invertHoverState() }
 
-  @Input() color: string = 'neutral';
+  @Input() color!: string;
   @Input() showIO: boolean = false
   @Input() size: ToggleSize = 'md';
   @Input() value: boolean = false;
@@ -55,7 +55,7 @@ export class ToggleContainerComponent {
   updateToggleColor(): string {
     return this.value
       ? colorFromKey(colorKeyFromTheme(this.color), this.isHover ? 4 : 5)
-      : this.isHover ? colorFromKey(colorKeyFromTheme(this.color), 2) : colorFromKey('neutral', 3)
+      : this.isHover ? colorFromKey(colorKeyFromTheme(this.color), 2) : colorFromKey('gray', 5)
   }
 
 }

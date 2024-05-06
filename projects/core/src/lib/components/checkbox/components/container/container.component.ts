@@ -24,7 +24,7 @@ import { CheckboxContainerInputComponent } from './input/input.component';
 
 export class CheckboxContainerComponent implements OnChanges {
 
-  colorKey: string = 'neutral';
+  colorKey: string = 'gray';
   isHover: boolean = false;
 
   @HostBinding('class') @Input() size: CheckboxSize = 'md';

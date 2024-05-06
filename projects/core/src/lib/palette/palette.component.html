@@ -1,0 +1,13 @@
+<ng-container *ngFor="let key of colorKeys">
+  <div class="row">
+    <ng-container *ngFor="let color of colors?.[key]; let index = index">
+      <div class="item">
+        <span class="key"> {{ key }}-{{ index }} </span>
+        <ak-palette-color [bgColor]="color" />
+        <span (click)="copyToClipboard(color)" class="color">
+          {{ color }}
+        </span>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

@@ -16,7 +16,7 @@ export class RadioComponent {
 
   @HostBinding('class') @Input() size: RadioSize = 'md';
 
-  @Input() color: string = 'neutral';
+  @Input() color: string = 'gray';
   @Input() role: string = '';
   @Input() status: string = '';
   @Input() label: string = '';

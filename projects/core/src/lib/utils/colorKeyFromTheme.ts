@@ -2,7 +2,6 @@ import { akTheme } from "../theme";
 
 export function colorKeyFromTheme(key?: string): string {
   const { colorKeys, roleKeys, statusKeys } = akTheme;
-
   if (!key)
     return "neutral";
 

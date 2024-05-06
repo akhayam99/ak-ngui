@@ -1,5 +1,6 @@
 import { componentWrapperDecorator, type Meta, type StoryObj } from '@storybook/angular';
 import { StorybookThemeDecorator } from '../../decorator/storybook-theme-decorator';
+import { akTheme } from '../../theme';
 import { SpinnerComponent } from './spinner.component';
 
 const meta: Meta<SpinnerComponent> = {
@@ -15,7 +16,7 @@ const meta: Meta<SpinnerComponent> = {
     },
     color: {
       control: 'select',
-      options: ['', 'blue', 'red', 'orange', 'green', 'yellow', 'neutral'],
+      options: ['', ...(akTheme.colorKeys as string[])],
       description: 'The color of the spinner'
     },
   },

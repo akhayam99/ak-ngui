@@ -19,7 +19,7 @@ import { ToggleSize } from './types/ToggleSize';
 
 export class ToggleComponent {
 
-  @Input() color: string = 'neutral';
+  @Input() color: string = 'gray';
   @Input() label: string = '';
   @Input() showIO?: boolean;
   @Input() size: ToggleSize = 'md';
