@@ -1,3 +1,10 @@
-<input />
+<ak-input-container
+  (valueChange)="updateValue($event)"
+  [size]="size"
+  [value]="value"
+>
+  <ng-content select="[before-input]" before-input></ng-content>
+  <ng-content select="[after-input]" after-input></ng-content>
+</ak-input-container>
 
 <ak-input-detail [label]="'I am an input'" />

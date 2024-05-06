@@ -74,6 +74,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/core/src/lib/components/select/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/core/src/lib/components/spinner/spinner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -89,6 +99,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{}"
+            },
+            {
+                "name": "InputCustomBefore",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\n  template: `\n    <ak-input [size]=\"md\" [value]=\"'Amin'\">\n      <div before-input> X </div>\n    </ak-input>\n  `,\n})"
             },
             {
                 "name": "meta",
@@ -128,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<InputComponent>",
-                "defaultValue": "{\n  title: 'Input/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                "defaultValue": "{\n  title: 'Input/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the button'\n    },\n  },\n  args: {\n    size: 'md',\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "meta",
@@ -139,6 +159,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<RadioComponent>",
                 "defaultValue": "{\n  title: 'Input/Radio',\n  component: RadioComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the radio'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the radio'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the radio'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the radio value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    label: 'I am a radio',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Radio value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/select/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SelectComponent>",
+                "defaultValue": "{\n  title: 'Input/Select',\n  component: SelectComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
             },
             {
                 "name": "meta",
@@ -263,6 +293,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<RadioComponent>",
                 "file": "projects/core/src/lib/components/radio/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SelectComponent>",
+                "file": "projects/core/src/lib/components/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -421,6 +462,16 @@
                     "defaultValue": "{}"
                 },
                 {
+                    "name": "InputCustomBefore",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\n  template: `\n    <ak-input [size]=\"md\" [value]=\"'Amin'\">\n      <div before-input> X </div>\n    </ak-input>\n  `,\n})"
+                },
+                {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -428,7 +479,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputComponent>",
-                    "defaultValue": "{\n  title: 'Input/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                    "defaultValue": "{\n  title: 'Input/Input',\n  component: InputComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the button'\n    },\n  },\n  args: {\n    size: 'md',\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/lib/components/radio/radio.stories.ts": [
@@ -451,6 +502,28 @@
                     "deprecationMessage": "",
                     "type": "Meta<RadioComponent>",
                     "defaultValue": "{\n  title: 'Input/Radio',\n  component: RadioComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    size: {\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n      description: 'The size of the radio'\n    },\n    value: {\n      control: 'boolean',\n      description: 'The value of the radio'\n    },\n    label: {\n      control: 'text',\n      description: 'The label of the radio'\n    },\n    labelPosition: {\n      control: 'radio',\n      options: ['left', 'right'],\n      description: 'The position of the label'\n    },\n    color: {\n      control: 'select',\n      options: ['', ...(akTheme.colorKeys as string[])],\n      description: 'The color of the button'\n    },\n    role: {\n      control: 'select',\n      options: ['', ...(akTheme.roleKeys as string[])],\n      description: 'The role of the button (overrides color)'\n    },\n    status: {\n      control: 'select',\n      options: ['', ...(akTheme.statusKeys as string[])],\n      description: 'The status of the button (overrides color and role)'\n    },\n    onChange: {\n      action: 'onChange',\n      description: 'The event emitted when the radio value changes'\n    }\n  },\n  args: {\n    size: 'md',\n    value: false,\n    label: 'I am a radio',\n    labelPosition: 'right',\n    color: 'blue',\n    role: '',\n    status: '',\n    onChange: (event) => console.log(\"Radio value: \", event),\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
+                }
+            ],
+            "projects/core/src/lib/components/select/select.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SelectComponent>",
+                    "defaultValue": "{\n  title: 'Input/Select',\n  component: SelectComponent,\n  tags: ['autodocs'],\n  argTypes: {\n\n  },\n  args: {\n\n  },\n  decorators: [componentWrapperDecorator(StorybookThemeDecorator)],\n}"
                 }
             ],
             "projects/core/src/lib/components/spinner/spinner.stories.ts": [
@@ -572,6 +645,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<RadioComponent>",
                     "file": "projects/core/src/lib/components/radio/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/core/src/lib/components/select/select.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SelectComponent>",
+                    "file": "projects/core/src/lib/components/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -726,6 +812,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "InputCustomBefore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -743,6 +839,26 @@
             },
             {
                 "filePath": "projects/core/src/lib/components/radio/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/select/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/select/select.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

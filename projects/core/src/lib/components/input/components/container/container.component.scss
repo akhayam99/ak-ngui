@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  border-radius: var(--ak-size-xxxs);
+  border: 1px solid var(--ak-gray-3);
+  gap: 8px;
+  height: var(--ak-size-md);
+  padding: 0 var(--ak-size-xxs);
+  transition: .3s all;
+
+  &.sm {
+    height: var(--ak-size-sm);
+  }
+
+  &.md {
+    height: var(--ak-size-md);
+  }
+
+  &.lg {
+    height: var(--ak-size-lg);
+  }
+
+
+  &.is-focus {
+    border-color: var(--ak-primary-5);
+  }
+
+  input::placeholder {
+    color: var(--ak-gray-4);
+  }
+
+  input {
+    border: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

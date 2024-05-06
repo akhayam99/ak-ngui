@@ -7,10 +7,14 @@ const meta: Meta<InputComponent> = {
   component: InputComponent,
   tags: ['autodocs'],
   argTypes: {
-
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'The size of the button'
+    },
   },
   args: {
-
+    size: 'md',
   },
   decorators: [componentWrapperDecorator(StorybookThemeDecorator)],
 };
@@ -20,3 +24,11 @@ export default meta;
 type Story = StoryObj<InputComponent>;
 
 export const Default: Story = {};
+
+export const InputCustomBefore = () => ({
+  template: `
+    <ak-input [size]="md" [value]="'Amin'">
+      <div before-input> X </div>
+    </ak-input>
+  `,
+});

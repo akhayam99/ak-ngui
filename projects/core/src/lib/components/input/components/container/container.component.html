@@ -1,0 +1,19 @@
+<ng-content select="[before-input]"></ng-content>
+
+<ng-container *ngIf="!beforeExists"></ng-container>
+
+<input
+  (blur)="invertFocus()"
+  (change)="valueChange.emit($event.target.value)"
+  (focus)="invertFocus()"
+  (keydown)="onKeydown(value)"
+  (keyup)="valueChange.emit(input.value)"
+  [(ngModel)]="value"
+  [ngModelOptions]="{ standalone: true }"
+  [placeholder]="'Input component'"
+  #input
+/>
+
+<ng-content select="[after-input]"></ng-content>
+
+<ng-container *ngIf="!afterExists"></ng-container>
